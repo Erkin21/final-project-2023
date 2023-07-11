@@ -1,19 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Gaming Showcase 2023</title>
-        <link rel="stylesheet" href="styles.css" />
-    </head>
-    <body>
-        <div class="front-page">
-            <h1 class="title">Gaming Showcase 2023</h1>
-            <h2 class="logo">[insert logo]</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Showcase 2023</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="front-page">
+        <h1 class="title">Gaming Showcase 2023</h1>
+        <h2 class="logo"><img src="path_to_your_logo_image" alt="Logo"></h2>
 
-            <div class="menu"></div>
-            
+        <div class="topnav" id="myTopnav">
+            <div class="myLinks">
+                <a href="#home" id="homeButton" class="active">Home</a>
+                <a href="#GS">Gaming Showcase</a>
+                <a href="#PS4">PS4 Exclusive</a>
+                <a href="#Xbox">Xbox Exclusive</a>
+                <a href="#PC">PC Exclusive</a>
+                <a href="#Switch">Switch Exclusive</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                  </a>
+            </div>
         </div>
-        <script src="script.js"></script>
-    </body>
+
+        
+        <div class="slide-container">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <div class="slide-content">
+                        <iframe src="https://www.youtube.com/embed/q0vNoRhuV_I"></iframe>
+                    </div>
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <div class="slide-content">
+                        <img src="https://images.purexbox.com/181c28839b04d/alan-wake-2-campaign-length-revealed-ahead-of-october-launch.large.jpg" style="width:100%">
+                    </div>
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <div class="slide-content">
+                        <img src="https://blog.playstation.com/tachyon/2021/12/1789f9e286539c3e3072116fd8494e570a184470.jpg?resize=1088%2C612&crop_strategy=smart" style="width:100%">
+                    </div>
+                </div>
+        
+                <!-- Add more slides as needed -->
+        
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+            </div>
+        
+            <div class="slide-text-container">
+                <div class="slide-text">
+                    <h2>Alan Wake II</h2>
+                    <p>Set in present day, Alan Wake 2 follows the story of not only Alan Wake as he once again attempts to escape the Dark Place, but also a new character in the form of Saga Anderson, a talented FBI agent who arrives at Bright Falls to investigate a series of murders — one of which includes former FBI agent Robert ...</p>
+                    <p><a href="https://www.remedygames.com/">Remedy Entertainment</a></p>
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
