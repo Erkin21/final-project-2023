@@ -1,0 +1,289 @@
+/* styles.css */
+
+/* Front page container */
+.front-page {
+    width: 90%;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif; /* Set the font to Arial */
+}
+
+/* ===================================================== */
+
+/* Title styles */
+.title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+    color: #000000;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif; /* Set the font to Arial */
+}
+
+/* Logo styles */
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    max-width: 200px;
+    height: auto;
+}
+
+/* ===================================================== */
+
+/* Navigation bar Style */
+.topnav {
+    background-color: #333;
+    white-space: nowrap;
+    overflow-x: auto; /* Enable horizontal overflow */
+    font-weight: bold;
+    flex: 1; /* Allow navigation to occupy available space */
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: none;
+    display: inline-block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin-right: -5px; /* Remove spacing between links when hovering */
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #F3E600;
+    color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+    background-color: #F3E600;
+    color: black;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
+}
+
+/* Custom scrollbar style */
+.topnav::-webkit-scrollbar {
+    width: 4px; /* Set the width of the scrollbar */
+    height: 4px; /* Set the height of the scrollbar */
+    overflow-x:auto
+}
+
+.topnav::-webkit-scrollbar-thumb {
+    background-color: #888; /* Set the color of the scrollbar thumb */
+}
+
+.topnav::-webkit-scrollbar-track {
+    background-color: transparent; /* Set the color of the scrollbar track */
+}
+
+.topnav::-webkit-scrollbar-corner {
+    background-color: transparent; /* Hide the scrollbar corner */
+}
+
+/* ===================================================== */
+
+/* Purpose Style */
+
+.purpose {
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.purpose p {
+    font-size: 20px;
+}
+
+.purpose h2 {
+    font-size: 28px;
+    font-weight: bolder;
+}
+
+/* ===================================================== */
+
+.carousel-item {
+    display: flex;
+    justify-content: left;
+    margin-top: 10px;
+}
+
+.shape {
+    width: 65%;
+    float: left;
+    margin-right: 10px; /* Add some spacing between the slideshow and other content */
+}
+
+.embed-responsive-16by9 {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.embed-responsive-16by9 iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-left { 
+    width: 60%; 
+}
+
+.radius {
+    margin: 200px 0;
+}
+
+/* ====================================== */
+
+.slideshow-container {
+    display: flex; /* Make the carousel and text box containers flexible in height and aligned side by side */
+    flex-direction: row; /* Stack the carousel and text box side by side on larger screens */
+}
+
+.gameTitle {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.slideshow-text {
+    width: 38.6%;
+    padding: 10px;
+    margin-top: 10px;
+    float: right;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow: auto; /* Enable horizontal overflow */
+    flex: 1; /* Allow the text box to occupy available space */
+    display: flex; /* Make the text box container flexible in height */
+    flex-direction: column; /* Stack the title and links vertically in the text box */
+}
+
+
+/* Remove underline from specific links with class "my-link" */
+.gameLink {
+    text-decoration: none;
+}
+  
+  /* Make links with class "my-link" purple when clicked */
+.gameLink:focus {
+    color: purple;
+    text-decoration: none;
+}
+
+/* ==================================================== */
+
+@media screen and (max-width: 1100px) {
+    .slideshow-text {
+        font-size: small;
+        flex: 1; /* Allow the text box to occupy available space */
+        display: flex; /* Make the text box container flexible in height */
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .topnav.responsive {
+        position: relative;
+    }
+    .topnav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .front-page {
+        flex-direction: column; /* Stack elements vertically */
+    }
+    .slideshow-container {
+        flex-direction: column; /* Stack the carousel and text box vertically */
+    }
+    .shape {
+        width: 100%; /* Extend the slideshow to full width */
+        float: none; /* Reset the float */
+    }
+    .slideshow-text {
+        width: 100%; /* Occupy full width */
+        float: none; /* Reset the float */
+        margin: 10px 0; /* Adjust margin for spacing */
+        order: 1; /* Change the order of the text div to appear below the slideshow */
+    }
+    .gameTitle {
+        text-align: left; /* Center align the game title */
+        margin-bottom: 10px; /* Add some spacing between the title and links */
+    }
+    .purpose h2 {
+        font-size: 25px;
+        font-weight: bolder;
+    }
+    .purpose p {
+        font-size: 15px;
+    }
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .topnav {
+        overflow-x: hidden; /* Hide horizontal overflow */
+        overflow-y: auto; /* Enable vertical scroll */
+    }
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+    .topnav.responsive {
+        position: relative;
+    }
+    .topnav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .slideshow-text {
+        font-size: 12px;
+    }
+    .purpose h2 {
+        font-size: 20px;
+        font-weight: bolder;
+    }
+    .purpose p {
+        font-size: 12px;
+    }
+}
+
+/* Additional styles to extend the background and border to the slideshow */
+.front-page::after {
+    content: "";
+    display: block;
+    clear: both;
+}

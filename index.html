@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaming Showcase 2023</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
     <div class="front-page">
+        <!-- Title Start -->
         <h1 class="title">Gaming Showcase 2023</h1>
         <h2 class="logo"><img src="path_to_your_logo_image" alt="Logo"></h2>
 
+        <!-- NAV BAR START -->
         <div class="topnav" id="myTopnav">
             <div class="myLinks">
+                <!-- Add your navigation links here -->
                 <a href="#home" id="homeButton" class="active">Home</a>
                 <a href="#GS">Gaming Showcase</a>
                 <a href="#PS4">PS4 Exclusive</a>
@@ -22,50 +26,105 @@
                 <a href="#Switch">Switch Exclusive</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
-                  </a>
+                </a>
             </div>
         </div>
 
-        
-        <div class="slide-container">
-            <div class="slideshow-container">
-                <div class="mySlides fade">
-                    <div class="numbertext">1 / 3</div>
-                    <div class="slide-content">
-                        <iframe src="https://www.youtube.com/embed/q0vNoRhuV_I"></iframe>
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">2 / 3</div>
-                    <div class="slide-content">
-                        <img src="https://images.purexbox.com/181c28839b04d/alan-wake-2-campaign-length-revealed-ahead-of-october-launch.large.jpg" style="width:100%">
-                    </div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">3 / 3</div>
-                    <div class="slide-content">
-                        <img src="https://blog.playstation.com/tachyon/2021/12/1789f9e286539c3e3072116fd8494e570a184470.jpg?resize=1088%2C612&crop_strategy=smart" style="width:100%">
-                    </div>
-                </div>
-        
-                <!-- Add more slides as needed -->
-        
-                <a class="prev" onclick="plusSlides(-1)">❮</a>
-                <a class="next" onclick="plusSlides(1)">❯</a>
-            </div>
-        
-            <div class="slide-text-container">
-                <div class="slide-text">
-                    <h2>Alan Wake II</h2>
-                    <p>Set in present day, Alan Wake 2 follows the story of not only Alan Wake as he once again attempts to escape the Dark Place, but also a new character in the form of Saga Anderson, a talented FBI agent who arrives at Bright Falls to investigate a series of murders — one of which includes former FBI agent Robert ...</p>
-                    <p><a href="https://www.remedygames.com/">Remedy Entertainment</a></p>
-                </div>
-            </div>
+        <!-- Purpose of Website START -->
+        <div class="purpose">
+            <h2>Purpose of Website</h2>
+            <p>To create a website that showcases most of the games shown in the “Gaming showcase.” </p>
         </div>
-        
+
+        <!-- Game Slideshow/Carosel Here -->
+        <!-- Game #1 -->
+        <div class="slideshow-container">
+            <div id="carousel-1" class="shape carousel slide carousel-left">
+                <div class="carousel-indicators">
+                    <!-- Add your carousel indicators here -->
+                    <button type="button" data-bs-target="#carousel-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carousel-1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carousel-1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <!-- Add your carousel items here -->
+                    <div class="carousel-item active">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe src="https://www.youtube.com/embed/q0vNoRhuV_I" class="embed-responsive-item"></iframe>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.purexbox.com/181c28839b04d/alan-wake-2-campaign-length-revealed-ahead-of-october-launch.large.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://blog.playstation.com/tachyon/2021/12/1789f9e286539c3e3072116fd8494e570a184470.jpg?resize=1088%2C612&crop_strategy=smart" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev radius" type="button" data-bs-target="#carousel-1" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="false"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next radius" type="button" data-bs-target="#carousel-1" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="false"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <div class="slideshow-text">
+                <h3 class="gameTitle">Alan Wake II</h3>
+                <p class="summary">Alan Wake II is an upcoming survival horror game developed by Remedy Entertainment and published by Epic Games Publishing. A sequel to Alan Wake, the game is set to be released for PlayStation 5, Windows, and Xbox Series X/S on October 17, 2023.</p>
+                <a href="https://www.remedygames.com/" class="gameLink" target="_blank">Author's Website</a>
+                <a href="https://store.epicgames.com/en-US/p/alan-wake-2" class="gameLink" target="_blank">Buy Now</a>
+            </div>
+
+        </div>
+
+        <!-- Game #2 -->
+        <div class="slideshow-container">
+            <div id="carousel-2" class="shape carousel slide carousel-left">
+                <div class="carousel-indicators">
+                    <!-- Add your carousel indicators here -->
+                    <button type="button" data-bs-target="#carousel-2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carousel-2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carousel-2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <!-- Add your carousel items here -->
+                    <div class="carousel-item active">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe src="https://www.youtube.com/embed/9OosC1E8TVM" class="embed-responsive-item"></iframe>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://assetsio.reedpopcdn.com/-1617958160495.jpg?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.dexerto.com/cdn-cgi/image/width=3840,quality=75,format=auto/https://editors.dexerto.com/wp-content/uploads/2021/09/04/PoE-2-release-date.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev radius" type="button" data-bs-target="#carousel-2" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="false"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next radius" type="button" data-bs-target="#carousel-2" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="false"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <div class="slideshow-text">
+                <h3 class="gameTitle">Path of Exile 2</h3>
+                <p class="summary">Path of Exile 2 (initially referred to as Path of Exile 4.0) is an upcoming expansion for Path of Exile. It was officially announced by Grinding Gear Games on November 15, 2019, during ExileCon[1]...</p>
+                <a href="https://pathofexile2.com/" class="gameLink" target="_blank">Author's Website</a>
+                <a href="https://www.pathofexile.com/account/create" class="gameLink" target="_blank">Free Download</a>
+            </div>
+
+        </div>
 
     </div>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
 </body>
 </html>
