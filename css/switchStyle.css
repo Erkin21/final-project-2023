@@ -1,0 +1,10 @@
+.topnav a:hover {
+  background-color: #00c3c3;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #00c3c3;
+  color: rgb(0, 0, 0);
+}
