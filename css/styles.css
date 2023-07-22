@@ -93,6 +93,24 @@
 .topnav::-webkit-scrollbar-corner {
   background-color: transparent; /* Hide the scrollbar corner */
 }
+/* ========================================================= */
+
+/* Style the search area */
+.search-container {
+  float: none;
+  margin: 0;
+  padding: 0px;
+  height: 52px;
+  background-color: white; /* Set the background color to black */
+}
+
+.search-container input[type="text"] {
+  font-size: 14px;
+  border: solid;
+  border-radius: 5px;
+  margin: 0;
+  outline: none;
+}
 
 /* ===================================================== */
 
@@ -314,26 +332,3 @@
   display: block;
   clear: both;
 }
-
-
-/* ============================================== */
-
-/* Style the search area */
-.search-container {
-  float: none;
-  margin: 0;
-  padding: 0px;
-  height: 52px;
-  background-color: white; /* Set the background color to black */
-}
-
-.search-container input[type="text"] {
-  font-size: 14px;
-  border: solid;
-  border-radius: 5px;
-  margin: 0;
-  outline: none;
-}
-
-/* ============================================= */
-

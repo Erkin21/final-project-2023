@@ -8,7 +8,6 @@ function myFunction() {
   }
 }
 
-
 // Search
 function searchGames() {
   let input = document.getElementById("searchInput").value;
@@ -30,4 +29,3 @@ function searchGames() {
 }
 
 document.getElementById("searchInput").addEventListener("input", searchGames);
-
