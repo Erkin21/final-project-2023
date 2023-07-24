@@ -149,6 +149,18 @@
             target="_blank"
             >Pre-Order Now</a
           >
+          <div class="gameLink rating-container">
+            <!--Stars Implementation -->
+            <div class="rating-system" id="rating-system-Detective-Pikachu-Returns">
+              <span class="fa fa-star" id="star1-Detective-Pikachu-Returns" onclick="rate('1', 'Detective Pikachu Returns')"></span>
+              <span class="fa fa-star" id="star2-Detective-Pikachu-Returns" onclick="rate('2', 'Detective Pikachu Returns')"></span>
+              <span class="fa fa-star" id="star3-Detective-Pikachu-Returns" onclick="rate('3', 'Detective Pikachu Returns')"></span>
+              <span class="fa fa-star" id="star4-Detective-Pikachu-Returns" onclick="rate('4', 'Detective Pikachu Returns')"></span>
+              <span class="fa fa-star" id="star5-Detective-Pikachu-Returns" onclick="rate('5', 'Detective Pikachu Returns')"></span>
+              <span class="rating-number" id="numRatings-Detective-Pikachu-Returns">(0)</span>
+            </div>      
+          </div>
+
         </div>
       </div>
 
@@ -244,6 +256,18 @@
             target="_blank"
             >Pre-Order Now</a
           >
+          <div class="gameLink rating-container">
+            <!--Stars Implementation -->
+            <div class="rating-system" id="rating-system-Pikmin-4">
+              <span class="fa fa-star" id="star1-Pikmin-4" onclick="rate('1', 'Pikmin 4')"></span>
+              <span class="fa fa-star" id="star2-Pikmin-4" onclick="rate('2', 'Pikmin 4')"></span>
+              <span class="fa fa-star" id="star3-Pikmin-4" onclick="rate('3', 'Pikmin 4')"></span>
+              <span class="fa fa-star" id="star4-Pikmin-4" onclick="rate('4', 'Pikmin 4')"></span>
+              <span class="fa fa-star" id="star5-Pikmin-4" onclick="rate('5', 'Pikmin 4')"></span>
+              <span class="rating-number" id="numRatings-Pikmin-4">(0)</span>
+            </div>      
+          </div>
+
         </div>
       </div>
 
@@ -335,13 +359,25 @@
             target="_blank"
             >Pre-Order Now</a
           >
+          <div class="gameLink rating-container">
+            <!--Stars Implementation -->
+            <div class="rating-system" id="rating-system-Super-Mario-Bros-Wonder">
+              <span class="fa fa-star" id="star1-Super-Mario-Bros-Wonder" onclick="rate('1', 'Super Mario Bros. Wonder')"></span>
+              <span class="fa fa-star" id="star2-Super-Mario-Bros-Wonder" onclick="rate('2', 'Super Mario Bros. Wonder')"></span>
+              <span class="fa fa-star" id="star3-Super-Mario-Bros-Wonder" onclick="rate('3', 'Super Mario Bros. Wonder')"></span>
+              <span class="fa fa-star" id="star4-Super-Mario-Bros-Wonder" onclick="rate('4', 'Super Mario Bros. Wonder')"></span>
+              <span class="fa fa-star" id="star5-Super-Mario-Bros-Wonder" onclick="rate('5', 'Super Mario Bros. Wonder')"></span>
+              <span class="rating-number" id="numRatings-Super-Mario-Bros-Wonder">(0)</span>
+            </div>      
+          </div>          
+
         </div>
       </div>
 
       <!-- About us section -->
       <div class="purpose">
         <h2>About Us</h2>
-        <p>Made by: Erkin Abdullaev, Tafhim Khan</p>
+        <p>Made by: Erkin Abdullaev, Tafhim Khan, Bodrye Kamdem</p>
       </div>
     </div>
 
@@ -356,5 +392,123 @@
       integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
       crossorigin="anonymous"
     ></script>
+
+    <!-- rating backend-->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { getFirestore, doc, collection, addDoc, getDoc, query, where, runTransaction } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
+      import { setDoc } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
+      import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
+      
+      // Firebase configuration details
+      const firebaseConfig = {
+        apiKey: "AIzaSyDpNUEId6oedAblTKRQh9ZHj76D1IIzlyY",
+        authDomain: "gaming-showcase.firebaseapp.com",
+        projectId: "gaming-showcase",
+        storageBucket: "gaming-showcase.appspot.com",
+        messagingSenderId: "918009808163",
+        appId: "1:918009808163:web:3bc3ffb886b1114a93b896",
+        measurementId: "G-6V83DP6L23"
+      };
+    
+      // initialize Firebase and check if any Firebase apps have been initialized yet
+      let app;
+      if (!getApps().length) { 
+        app = initializeApp(firebaseConfig);
+      }
+      const analytics = getAnalytics(app);
+      const db = getFirestore(app);
+      
+      // Remove spaces from the game title to use in HTML element IDs
+      function toHtmlId(gameTitle) {
+          return gameTitle.replace(/\W+/g, "-");
+      }
+      // handles game rating
+      function rate(starNumber, gameTitle) {
+        let i;
+        let gameTitleId = toHtmlId(gameTitle);
+        
+        
+        // First, clear all stars
+        for (i = 5; i > 0; i--) {
+          let starElement = document.getElementById('star' + i + '-' + gameTitleId);
+          starElement.className = 'fa fa-star';
+        }
+
+        // Then, highlight the number of stars the user selected
+        for (i = starNumber; i > 0; i--) {
+          let starElement = document.getElementById('star' + i + '-' + gameTitleId);
+          starElement.className = 'fa fa-star checked';
+        }
+
+        // finally, update the rating in the Firestore database
+        updateRating(gameTitle, starNumber).catch(console.error);
+      }
+
+      // Updates rating to server when user clicks
+      async function updateRating(gameTitle, rating) {
+        const gameTitleId = toHtmlId(gameTitle);
+        const numRatingsElement = document.getElementById('numRatings-' + gameTitleId);
+
+        // Temporarily updates the number of ratings displayed on the page, before making the change to Firestore
+        const currentCount = Number(numRatingsElement.textContent.replace(/[()]/g, ""));
+        numRatingsElement.textContent = `(${currentCount + 1})`; // Temporarily increment the counter
+
+        const ratingRef = doc(db, "ratings", gameTitle);
+        try {
+          const newCount = await runTransaction(db, async (transaction) => {
+            const ratingDoc = await transaction.get(ratingRef);
+            if (!ratingDoc.exists()) {
+              await setDoc(ratingRef, { totalRating: Number(rating), count: 1 });
+              return 1;
+            } else {
+              const newTotalRating = ratingDoc.data().totalRating + Number(rating);
+              const newCount = ratingDoc.data().count + 1;
+              transaction.update(ratingRef, { totalRating: newTotalRating, count: newCount });
+              return newCount;
+            }
+          });
+          numRatingsElement.textContent = `(${newCount})`; // Update the counter to the actual new count
+        } catch (error) {
+          console.error('Failed to update rating:', error);
+          numRatingsElement.textContent = `(${currentCount})`; // Revert to the original count if there was an error
+        }
+      }
+
+      async function fetchRating(gameTitle) {
+        const ratingRef = doc(db, "ratings", gameTitle);
+        const ratingSnap = await getDoc(ratingRef);
+        if (ratingSnap.exists()) {
+          const gameTitleId = toHtmlId(gameTitle);
+          const numRatingsElement = document.getElementById('numRatings-' + gameTitleId);
+          if (numRatingsElement) {
+              numRatingsElement.textContent = `(${ratingSnap.data().count})`;
+          }
+          return Math.round(ratingSnap.data().totalRating / ratingSnap.data().count);
+        }
+        return 0;
+      }
+
+      async function setRatingStars(gameTitle) {
+        let gameTitleId = toHtmlId(gameTitle);
+        let rating = await fetchRating(gameTitle).catch(console.error);
+        let i;
+        for (i = rating; i > 0; i--) {
+          let starElement = document.getElementById('star' + i + '-' + gameTitleId);
+          if (starElement) {
+            starElement.className = 'fa fa-star checked';
+          }
+        }
+      }
+
+      window.rate = rate;
+      window.onload = function() {
+        setRatingStars("Detective Pikachu Returns");
+        setRatingStars("Pikmin 4");
+        setRatingStars("Super Mario Bros. Wonder");
+      };
+    </script>
+
   </body>
 </html>
