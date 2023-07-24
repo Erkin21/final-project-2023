@@ -336,7 +336,7 @@
 /* Stars implementation */
 .rating-container {
   justify-content: center;
-  width: 100%; /* extend the container to same width as others */
+  width: 44%; /* extend the container to same width as others */
   height: 8%;
   text-align: center; /* center align the stars */
 }
