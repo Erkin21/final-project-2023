@@ -145,15 +145,36 @@
           <div class="gameLink rating-container">
             <!--Stars Implementation -->
             <div class="rating-system" id="rating-system-Path-of-Exile-2">
-              <span class="fa fa-star" id="star1-Path-of-Exile-2" onclick="rate('1', 'Path of Exile 2')"></span>
-              <span class="fa fa-star" id="star2-Path-of-Exile-2" onclick="rate('2', 'Path of Exile 2')"></span>
-              <span class="fa fa-star" id="star3-Path-of-Exile-2" onclick="rate('3', 'Path of Exile 2')"></span>
-              <span class="fa fa-star" id="star4-Path-of-Exile-2" onclick="rate('4', 'Path of Exile 2')"></span>
-              <span class="fa fa-star" id="star5-Path-of-Exile-2" onclick="rate('5', 'Path of Exile 2')"></span>
-              <span class="rating-number" id="numRatings-Path-of-Exile-2">(0)</span> 
-            </div>      
-          </div>          
-
+              <span
+                class="fa fa-star"
+                id="star1-Path-of-Exile-2"
+                onclick="rate('1', 'Path of Exile 2')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star2-Path-of-Exile-2"
+                onclick="rate('2', 'Path of Exile 2')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star3-Path-of-Exile-2"
+                onclick="rate('3', 'Path of Exile 2')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star4-Path-of-Exile-2"
+                onclick="rate('4', 'Path of Exile 2')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star5-Path-of-Exile-2"
+                onclick="rate('5', 'Path of Exile 2')"
+              ></span>
+              <span class="rating-number" id="numRatings-Path-of-Exile-2"
+                >(0)</span
+              >
+            </div>
+          </div>
         </div>
       </div>
 
@@ -249,15 +270,34 @@
           <div class="gameLink rating-container">
             <!--Stars Implementation -->
             <div class="rating-system" id="rating-system-Warhaven">
-              <span class="fa fa-star" id="star1-Warhaven" onclick="rate('1', 'Warhaven')"></span>
-              <span class="fa fa-star" id="star2-Warhaven" onclick="rate('2', 'Warhaven')"></span>
-              <span class="fa fa-star" id="star3-Warhaven" onclick="rate('3', 'Warhaven')"></span>
-              <span class="fa fa-star" id="star4-Warhaven" onclick="rate('4', 'Warhaven')"></span>
-              <span class="fa fa-star" id="star5-Warhaven" onclick="rate('5', 'Warhaven')"></span>
-              <span id="numRatings-Warhaven">(0)</span> 
-            </div>      
-          </div>          
-
+              <span
+                class="fa fa-star"
+                id="star1-Warhaven"
+                onclick="rate('1', 'Warhaven')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star2-Warhaven"
+                onclick="rate('2', 'Warhaven')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star3-Warhaven"
+                onclick="rate('3', 'Warhaven')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star4-Warhaven"
+                onclick="rate('4', 'Warhaven')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star5-Warhaven"
+                onclick="rate('5', 'Warhaven')"
+              ></span>
+              <span id="numRatings-Warhaven">(0)</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -354,22 +394,41 @@
           <div class="gameLink rating-container">
             <!--Stars Implementation -->
             <div class="rating-system" id="rating-system-Eternights">
-              <span class="fa fa-star" id="star1-Eternights" onclick="rate('1', 'Eternights')"></span>
-              <span class="fa fa-star" id="star2-Eternights" onclick="rate('2', 'Eternights')"></span>
-              <span class="fa fa-star" id="star3-Eternights" onclick="rate('3', 'Eternights')"></span>
-              <span class="fa fa-star" id="star4-Eternights" onclick="rate('4', 'Eternights')"></span>
-              <span class="fa fa-star" id="star5-Eternights" onclick="rate('5', 'Eternights')"></span>
-              <span id="numRatings-Eternights">(0)</span> 
-            </div>      
-          </div> 
-
-        </div>       
+              <span
+                class="fa fa-star"
+                id="star1-Eternights"
+                onclick="rate('1', 'Eternights')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star2-Eternights"
+                onclick="rate('2', 'Eternights')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star3-Eternights"
+                onclick="rate('3', 'Eternights')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star4-Eternights"
+                onclick="rate('4', 'Eternights')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star5-Eternights"
+                onclick="rate('5', 'Eternights')"
+              ></span>
+              <span id="numRatings-Eternights">(0)</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- About us section -->
       <div class="purpose">
         <h2>About Us</h2>
-        <p>Made by: Erkin Abdullaev, Tafhim Khan, Bodrye Kamdem</p>
+        <p>Made by: Erkin Abdullaev, Tafhim Khan, Bodrye Kamdem, Khanh Huang</p>
       </div>
     </div>
 
@@ -388,11 +447,23 @@
     <!-- rating backend-->
     <script type="module">
       // Import the functions you need from the SDKs you need
-      import { getFirestore, doc, collection, addDoc, getDoc, query, where, runTransaction } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
+      import {
+        getFirestore,
+        doc,
+        collection,
+        addDoc,
+        getDoc,
+        query,
+        where,
+        runTransaction,
+      } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
       import { setDoc } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
-      import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+      import {
+        initializeApp,
+        getApps,
+      } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
-      
+
       // Firebase configuration details
       const firebaseConfig = {
         apiKey: "AIzaSyDpNUEId6oedAblTKRQh9ZHj76D1IIzlyY",
@@ -401,38 +472,41 @@
         storageBucket: "gaming-showcase.appspot.com",
         messagingSenderId: "918009808163",
         appId: "1:918009808163:web:3bc3ffb886b1114a93b896",
-        measurementId: "G-6V83DP6L23"
+        measurementId: "G-6V83DP6L23",
       };
-    
+
       // initialize Firebase and check if any Firebase apps have been initialized yet
       let app;
-      if (!getApps().length) { 
+      if (!getApps().length) {
         app = initializeApp(firebaseConfig);
       }
       const analytics = getAnalytics(app);
       const db = getFirestore(app);
-      
+
       // Remove spaces from the game title to use in HTML element IDs
       function toHtmlId(gameTitle) {
-          return gameTitle.replace(/\W+/g, "-");
+        return gameTitle.replace(/\W+/g, "-");
       }
-      
+
       // handles game rating
       function rate(starNumber, gameTitle) {
         let i;
         let gameTitleId = toHtmlId(gameTitle);
-        
-        
+
         // First, clear all stars
         for (i = 5; i > 0; i--) {
-          let starElement = document.getElementById('star' + i + '-' + gameTitleId);
-          starElement.className = 'fa fa-star';
+          let starElement = document.getElementById(
+            "star" + i + "-" + gameTitleId
+          );
+          starElement.className = "fa fa-star";
         }
 
         // Then, highlight the number of stars the user selected
         for (i = starNumber; i > 0; i--) {
-          let starElement = document.getElementById('star' + i + '-' + gameTitleId);
-          starElement.className = 'fa fa-star checked';
+          let starElement = document.getElementById(
+            "star" + i + "-" + gameTitleId
+          );
+          starElement.className = "fa fa-star checked";
         }
 
         // finally, update the rating in the Firestore database
@@ -442,10 +516,14 @@
       // Updates rating to server when user clicks
       async function updateRating(gameTitle, rating) {
         const gameTitleId = toHtmlId(gameTitle);
-        const numRatingsElement = document.getElementById('numRatings-' + gameTitleId);
+        const numRatingsElement = document.getElementById(
+          "numRatings-" + gameTitleId
+        );
 
         // Temporarily updates the number of ratings displayed on the page, before making the change to Firestore
-        const currentCount = Number(numRatingsElement.textContent.replace(/[()]/g, ""));
+        const currentCount = Number(
+          numRatingsElement.textContent.replace(/[()]/g, "")
+        );
         numRatingsElement.textContent = `(${currentCount + 1})`; // Temporarily increment the counter
 
         const ratingRef = doc(db, "ratings", gameTitle);
@@ -453,18 +531,25 @@
           const newCount = await runTransaction(db, async (transaction) => {
             const ratingDoc = await transaction.get(ratingRef);
             if (!ratingDoc.exists()) {
-              await setDoc(ratingRef, { totalRating: Number(rating), count: 1 });
+              await setDoc(ratingRef, {
+                totalRating: Number(rating),
+                count: 1,
+              });
               return 1;
             } else {
-              const newTotalRating = ratingDoc.data().totalRating + Number(rating);
+              const newTotalRating =
+                ratingDoc.data().totalRating + Number(rating);
               const newCount = ratingDoc.data().count + 1;
-              transaction.update(ratingRef, { totalRating: newTotalRating, count: newCount });
+              transaction.update(ratingRef, {
+                totalRating: newTotalRating,
+                count: newCount,
+              });
               return newCount;
             }
           });
           numRatingsElement.textContent = `(${newCount})`; // Update the counter to the actual new count
         } catch (error) {
-          console.error('Failed to update rating:', error);
+          console.error("Failed to update rating:", error);
           numRatingsElement.textContent = `(${currentCount})`; // Revert to the original count if there was an error
         }
       }
@@ -474,11 +559,15 @@
         const ratingSnap = await getDoc(ratingRef);
         if (ratingSnap.exists()) {
           const gameTitleId = toHtmlId(gameTitle);
-          const numRatingsElement = document.getElementById('numRatings-' + gameTitleId);
+          const numRatingsElement = document.getElementById(
+            "numRatings-" + gameTitleId
+          );
           if (numRatingsElement) {
-              numRatingsElement.textContent = `(${ratingSnap.data().count})`;
+            numRatingsElement.textContent = `(${ratingSnap.data().count})`;
           }
-          return Math.round(ratingSnap.data().totalRating / ratingSnap.data().count);
+          return Math.round(
+            ratingSnap.data().totalRating / ratingSnap.data().count
+          );
         }
         return 0;
       }
@@ -488,20 +577,21 @@
         let rating = await fetchRating(gameTitle).catch(console.error);
         let i;
         for (i = rating; i > 0; i--) {
-          let starElement = document.getElementById('star' + i + '-' + gameTitleId);
+          let starElement = document.getElementById(
+            "star" + i + "-" + gameTitleId
+          );
           if (starElement) {
-            starElement.className = 'fa fa-star checked';
+            starElement.className = "fa fa-star checked";
           }
         }
       }
 
       window.rate = rate;
-      window.onload = function() {
+      window.onload = function () {
         setRatingStars("Path of Exile 2");
         setRatingStars("Warhaven");
         setRatingStars("Eternights");
       };
     </script>
-
   </body>
 </html>

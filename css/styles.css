@@ -228,6 +228,42 @@
   text-decoration: none;
 }
 
+/* Additional styles to extend the background and border to the slideshow */
+.front-page::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Stars implementation */
+.rating-container {
+  justify-content: center;
+  width: 44%; /* extend the container to same width as others */
+  height: 8%;
+  text-align: center; /* center align the stars */
+}
+
+.rating-system {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rating-number {
+  vertical-align: sub;
+}
+
+.fa-star {
+  font-size: 50px;
+  cursor: pointer;
+  margin-right: 5px;
+  color: #07193f;
+}
+
+.fa-star.checked {
+  color: orange;
+}
+
 /* ==================================================== */
 
 @media screen and (max-width: 1150px) {
@@ -324,41 +360,4 @@
   .purpose p {
     font-size: 12px;
   }
-}
-
-/* Additional styles to extend the background and border to the slideshow */
-.front-page::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-/* Stars implementation */
-.rating-container {
-  justify-content: center;
-  width: 44%; /* extend the container to same width as others */
-  height: 8%;
-  text-align: center; /* center align the stars */
-}
-
-.rating-system {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 0;
-}
-
-.rating-number {
-  vertical-align: sub;
-}
-
-.fa-star {
-  font-size: 50px;
-  cursor: pointer;
-  margin-right: 5px;
-  color: #07193f;
-}
-
-.fa-star.checked {
-  color: orange;
 }

@@ -143,16 +143,35 @@
           <div class="gameLink rating-container">
             <!--Stars Implementation -->
             <div class="rating-system" id="rating-system-Avowed">
-              <span class="fa fa-star" id="star1-Avowed" onclick="rate('1', 'Avowed')"></span>
-              <span class="fa fa-star" id="star2-Avowed" onclick="rate('2', 'Avowed')"></span>
-              <span class="fa fa-star" id="star3-Avowed" onclick="rate('3', 'Avowed')"></span>
-              <span class="fa fa-star" id="star4-Avowed" onclick="rate('4', 'Avowed')"></span>
-              <span class="fa fa-star" id="star5-Avowed" onclick="rate('5', 'Avowed')"></span>
+              <span
+                class="fa fa-star"
+                id="star1-Avowed"
+                onclick="rate('1', 'Avowed')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star2-Avowed"
+                onclick="rate('2', 'Avowed')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star3-Avowed"
+                onclick="rate('3', 'Avowed')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star4-Avowed"
+                onclick="rate('4', 'Avowed')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star5-Avowed"
+                onclick="rate('5', 'Avowed')"
+              ></span>
               <span class="rating-number" id="numRatings-Avowed">(0)</span>
-            </div>      
+            </div>
           </div>
-
-        </div>       
+        </div>
       </div>
 
       <!-- Game #2 -->
@@ -251,15 +270,34 @@
           <div class="gameLink rating-container">
             <!--Stars Implementation -->
             <div class="rating-system" id="rating-system-Starfield">
-              <span class="fa fa-star" id="star1-Starfield" onclick="rate('1', 'Starfield')"></span>
-              <span class="fa fa-star" id="star2-Starfield" onclick="rate('2', 'Starfield')"></span>
-              <span class="fa fa-star" id="star3-Starfield" onclick="rate('3', 'Starfield')"></span>
-              <span class="fa fa-star" id="star4-Starfield" onclick="rate('4', 'Starfield')"></span>
-              <span class="fa fa-star" id="star5-Starfield" onclick="rate('5', 'Starfield')"></span>
+              <span
+                class="fa fa-star"
+                id="star1-Starfield"
+                onclick="rate('1', 'Starfield')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star2-Starfield"
+                onclick="rate('2', 'Starfield')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star3-Starfield"
+                onclick="rate('3', 'Starfield')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star4-Starfield"
+                onclick="rate('4', 'Starfield')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star5-Starfield"
+                onclick="rate('5', 'Starfield')"
+              ></span>
               <span class="rating-number" id="numRatings-Starfield">(0)</span>
-            </div>      
-          </div>         
-
+            </div>
+          </div>
         </div>
       </div>
 
@@ -361,22 +399,43 @@
           <div class="gameLink rating-container">
             <!--Stars Implementation -->
             <div class="rating-system" id="rating-system-Clockwork-Revolution">
-              <span class="fa fa-star" id="star1-Clockwork-Revolution" onclick="rate('1', 'Clockwork Revolution')"></span>
-              <span class="fa fa-star" id="star2-Clockwork-Revolution" onclick="rate('2', 'Clockwork Revolution')"></span>
-              <span class="fa fa-star" id="star3-Clockwork-Revolution" onclick="rate('3', 'Clockwork Revolution')"></span>
-              <span class="fa fa-star" id="star4-Clockwork-Revolution" onclick="rate('4', 'Clockwork Revolution')"></span>
-              <span class="fa fa-star" id="star5-Clockwork-Revolution" onclick="rate('5', 'Clockwork Revolution')"></span>
-              <span class="rating-number" id="numRatings-Clockwork-Revolution">(0)</span> 
-            </div>      
-          </div>          
-
+              <span
+                class="fa fa-star"
+                id="star1-Clockwork-Revolution"
+                onclick="rate('1', 'Clockwork Revolution')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star2-Clockwork-Revolution"
+                onclick="rate('2', 'Clockwork Revolution')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star3-Clockwork-Revolution"
+                onclick="rate('3', 'Clockwork Revolution')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star4-Clockwork-Revolution"
+                onclick="rate('4', 'Clockwork Revolution')"
+              ></span>
+              <span
+                class="fa fa-star"
+                id="star5-Clockwork-Revolution"
+                onclick="rate('5', 'Clockwork Revolution')"
+              ></span>
+              <span class="rating-number" id="numRatings-Clockwork-Revolution"
+                >(0)</span
+              >
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- About us section -->
       <div class="purpose">
         <h2>About Us</h2>
-        <p>Made by: Erkin Abdullaev, Tafhim Khan, Bodrye Kamdem</p>
+        <p>Made by: Erkin Abdullaev, Tafhim Khan, Bodrye Kamdem, Khanh Huang</p>
       </div>
     </div>
 
@@ -395,9 +454,21 @@
     <!-- rating backend-->
     <script type="module">
       // Import the functions you need from the SDKs you need
-      import { getFirestore, doc, collection, addDoc, getDoc, query, where, runTransaction } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
+      import {
+        getFirestore,
+        doc,
+        collection,
+        addDoc,
+        getDoc,
+        query,
+        where,
+        runTransaction,
+      } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
       import { setDoc } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
-      import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+      import {
+        initializeApp,
+        getApps,
+      } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
 
       // Firebase configuration details
@@ -408,34 +479,38 @@
         storageBucket: "gaming-showcase.appspot.com",
         messagingSenderId: "918009808163",
         appId: "1:918009808163:web:3bc3ffb886b1114a93b896",
-        measurementId: "G-6V83DP6L23"
+        measurementId: "G-6V83DP6L23",
       };
-    
+
       // initialize Firebase and check if any Firebase apps have been initialized yet
       let app;
-      if (!getApps().length) { 
+      if (!getApps().length) {
         app = initializeApp(firebaseConfig);
       }
       const analytics = getAnalytics(app);
       const db = getFirestore(app);
-      
+
       // handles game rating
       function rate(starNumber, gameTitle) {
         let i;
         let gameTitleId = gameTitle.split(" ").join("-");
-        
+
         // First, clear all stars
         for (i = 5; i > 0; i--) {
-          let starElement = document.getElementById('star' + i + '-' + gameTitleId);
-          starElement.className = 'fa fa-star';
+          let starElement = document.getElementById(
+            "star" + i + "-" + gameTitleId
+          );
+          starElement.className = "fa fa-star";
         }
 
         // Then, highlight the number of stars the user selected
         for (i = starNumber; i > 0; i--) {
-          let starElement = document.getElementById('star' + i + '-' + gameTitleId);
-          starElement.className = 'fa fa-star checked';
+          let starElement = document.getElementById(
+            "star" + i + "-" + gameTitleId
+          );
+          starElement.className = "fa fa-star checked";
         }
-        
+
         // finally, update the rating in the Firestore database
         updateRating(gameTitle, starNumber).catch(console.error);
       }
@@ -443,44 +518,58 @@
       // Updates rating to server when user clicks
       async function updateRating(gameTitle, rating) {
         const gameTitleId = gameTitle.split(" ").join("-");
-        const numRatingsElement = document.getElementById('numRatings-' + gameTitleId);
+        const numRatingsElement = document.getElementById(
+          "numRatings-" + gameTitleId
+        );
 
         // Temporarily updates the number of ratings displayed on the page, before making the change to Firestore
-        const currentCount = Number(numRatingsElement.textContent.replace(/[()]/g, ""));
-        numRatingsElement.textContent = `(${currentCount + 1})`; 
+        const currentCount = Number(
+          numRatingsElement.textContent.replace(/[()]/g, "")
+        );
+        numRatingsElement.textContent = `(${currentCount + 1})`;
 
         const ratingRef = doc(db, "ratings", gameTitle);
         try {
           const newCount = await runTransaction(db, async (transaction) => {
             const ratingDoc = await transaction.get(ratingRef);
             if (!ratingDoc.exists()) {
-              await setDoc(ratingRef, { totalRating: Number(rating), count: 1 });
+              await setDoc(ratingRef, {
+                totalRating: Number(rating),
+                count: 1,
+              });
               return 1;
             } else {
-              const newTotalRating = ratingDoc.data().totalRating + Number(rating);
+              const newTotalRating =
+                ratingDoc.data().totalRating + Number(rating);
               const newCount = ratingDoc.data().count + 1;
-              transaction.update(ratingRef, { totalRating: newTotalRating, count: newCount });
+              transaction.update(ratingRef, {
+                totalRating: newTotalRating,
+                count: newCount,
+              });
               return newCount;
             }
           });
           numRatingsElement.textContent = `(${newCount})`; // Update the counter to the actual new count
         } catch (error) {
-          console.error('Failed to update rating:', error);
+          console.error("Failed to update rating:", error);
           numRatingsElement.textContent = `(${currentCount})`; // Revert to the original count if there was an error
         }
       }
-
 
       async function fetchRating(gameTitle) {
         const ratingRef = doc(db, "ratings", gameTitle);
         const ratingSnap = await getDoc(ratingRef);
         if (ratingSnap.exists()) {
           const gameTitleId = gameTitle.split(" ").join("-");
-          const numRatingsElement = document.getElementById('numRatings-' + gameTitleId);
+          const numRatingsElement = document.getElementById(
+            "numRatings-" + gameTitleId
+          );
           if (numRatingsElement) {
-              numRatingsElement.textContent = `(${ratingSnap.data().count})`;
+            numRatingsElement.textContent = `(${ratingSnap.data().count})`;
           }
-          return Math.round(ratingSnap.data().totalRating / ratingSnap.data().count);
+          return Math.round(
+            ratingSnap.data().totalRating / ratingSnap.data().count
+          );
         }
         return 0;
       }
@@ -490,20 +579,21 @@
         let rating = await fetchRating(gameTitle).catch(console.error);
         let i;
         for (i = rating; i > 0; i--) {
-          let starElement = document.getElementById('star' + i + '-' + gameTitleId);
+          let starElement = document.getElementById(
+            "star" + i + "-" + gameTitleId
+          );
           if (starElement) {
-            starElement.className = 'fa fa-star checked';
+            starElement.className = "fa fa-star checked";
           }
         }
       }
 
       window.rate = rate;
-      window.onload = function() {
+      window.onload = function () {
         setRatingStars("Avowed");
         setRatingStars("Starfield");
         setRatingStars("Clockwork Revolution");
       };
     </script>
-
   </body>
 </html>
